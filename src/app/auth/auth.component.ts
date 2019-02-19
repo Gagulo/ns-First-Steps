@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   selector: 'ns-auth',
@@ -6,11 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth.component.css'],
   moduleId: module.id,
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private router: RouterExtensions) { }
 
 }

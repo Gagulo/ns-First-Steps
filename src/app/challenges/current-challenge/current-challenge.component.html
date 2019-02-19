@@ -1,7 +1,11 @@
+<ActionBar title="Current Challegne" (loaded)='onColorIconBar()'>
+  <NavigationButton text='Back' android.systemIcon='ic_menu_back'></NavigationButton>
+</ActionBar>
 <StackLayout>
   <Label
     class="title"
     text="The current challenge"
     horizontalAlignment="center"
   ></Label>
+  <Button text='Edit Challenge' nsRouterLink="/edit-challenge"></Button>
 </StackLayout>
