@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   selector: 'ns-auth',
@@ -8,7 +7,5 @@ import { RouterExtensions } from 'nativescript-angular/router';
   moduleId: module.id,
 })
 export class AuthComponent {
-
-  constructor(private router: RouterExtensions) { }
 
 }
