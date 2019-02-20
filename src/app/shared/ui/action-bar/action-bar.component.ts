@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { isAndroid } from 'platform';
 import { Page } from 'tns-core-modules/ui/page';
 import { RouterExtensions } from 'nativescript-angular/router';
+import { UIService } from '../../ui.service';
 
 declare var android: any;
 
@@ -9,16 +10,23 @@ declare var android: any;
   selector: 'ns-action-bar',
   templateUrl: './action-bar.component.html',
   styleUrls: ['./action-bar.component.css'],
-  moduleId: module.id,
+  moduleId: module.id
 })
 export class ActionBarComponent implements OnInit {
-
   @Input() title: string;
   @Input() showBackButton = true;
+  @Input() hasMenu = true;
 
-  constructor(private page: Page, private router: RouterExtensions) { }
+  constructor(
+    private page: Page,
+    private router: RouterExtensions,
+    private uiService: UIService
+  ) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  get android() {
+    return isAndroid;
   }
 
   get canGoBack() {
@@ -29,7 +37,7 @@ export class ActionBarComponent implements OnInit {
     this.router.backToPreviousPage();
   }
 
-  onColorIconBar() {
+  onLoadedActionBar() {
     if (isAndroid) {
       const androidToolbar = this.page.actionBar.nativeView;
       const backButton = androidToolbar.getNavigationIcon();
@@ -42,4 +50,7 @@ export class ActionBarComponent implements OnInit {
     }
   }
 
+  onToggleMenu() {
+    this.uiService.toggleDrawer();
+  }
 }

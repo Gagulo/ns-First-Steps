@@ -16,7 +16,11 @@ const routes: Routes = [
     component: ChallengeTabsComponent,
     children: [
       { path: 'today', component: TodayComponent, outlet: 'today' },
-      { path: 'current-challenge', component: CurrentChallengeComponent, outlet: 'currentChallenge' }
+      {
+        path: 'current-challenge',
+        component: CurrentChallengeComponent,
+        outlet: 'currentChallenge'
+      }
     ]
   }
 ];
