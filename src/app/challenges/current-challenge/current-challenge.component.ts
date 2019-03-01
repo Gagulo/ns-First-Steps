@@ -6,7 +6,7 @@ import { UIService } from '~/app/shared/ui.service';
 @Component({
   selector: 'ns-current-challenge',
   templateUrl: './current-challenge.component.html',
-  styleUrls: ['./current-challenge.component.common.css', './current-challenge.component.css'],
+  styleUrls: ['./_current-challenge.component.common.scss', './current-challenge.component.scss'],
   moduleId: module.id
 })
 export class CurrentChallengeComponent {
