@@ -1,6 +1,15 @@
-@import '~nativescript-theme-core/css/core.light.css';
+@import '~nativescript-theme-core/scss/light';
+@import './theme/colors';
 
-.form-control {
+$btn-color: $primary;
+@import '~nativescript-theme-core/scss/index';
+
+ActionBar {
+  background: $primary;
+  color: white;
+}
+
+/* .form-control {
   border-bottom-color: #7c015d;
   border-bottom-width: 2;
   margin: 5 0;
@@ -23,4 +32,4 @@
   padding: 5 10;
   border-radius: 30%;
   margin: 5 0;
-}
+} */
